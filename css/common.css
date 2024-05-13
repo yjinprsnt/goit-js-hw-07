@@ -22,20 +22,3 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
-
-/* ===== HW - 3 ===== */
-.gallery {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-}
-
-.gallery li {
-  padding-right: 20px;
-}
-
-img {
-  width: 350px;
-}
-/* ===== /HW - 3 ===== */
