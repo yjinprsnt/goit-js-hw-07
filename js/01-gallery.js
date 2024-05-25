@@ -3,6 +3,11 @@ import { galleryItems } from './gallery-items.js';
 
 const galleryImg = document.querySelector('.gallery');
 
-function createListItemsMarkup(items) {
-  galleryItems.map(item => );
-}
+const createListItemsMarkup = galleryItems
+  .map(
+    item =>
+      `<li class="gallery__item"><img class="gallery__image" src="${item.preview}" alt="${item.description}"></li>`
+  )
+  .join('');
+
+galleryImg.insertAdjacentHTML('beforeend', createListItemsMarkup);
