@@ -12,7 +12,7 @@ const galleryImg = document.querySelector('.gallery');
 const itemsMarkup = galleryItems
   .map(
     item =>
-      `<li class="gallery__item"><img class="gallery__image" src="${item.preview}" alt="${item.description}"></li>`
+      `<li class="gallery__item"><img class="gallery__image" src="${item.preview}" data-original="${item.original}" alt="${item.description}"></li>`
   )
   .join('');
 
