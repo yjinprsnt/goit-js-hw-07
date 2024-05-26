@@ -1,12 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-const instance = basicLightbox.create(`
-	<h1>Dynamic Content</h1>
-	<p>You can set the content of the lightbox with JS.</p>
-`);
-instance.show(() => console.log('lightbox now visible'));
-
 const galleryImg = document.querySelector('.gallery');
 
 const itemsMarkup = galleryItems
@@ -21,5 +15,15 @@ galleryImg.insertAdjacentHTML('beforeend', itemsMarkup);
 galleryImg.addEventListener('click', onClickgallery);
 
 function onClickgallery(evt) {
-  console.log(evt);
+  //   console.log(evt.target);
+  const img = evt.target;
+  if (img.tagName === 'IMG') {
+    const originalSrc = img.getAttribute('data-original');
+    const altText = img.getAttribute('alt');
+
+    const instance = basicLightbox.create(
+      `<img src="${originalSrc}" alt="${altText}">`
+    );
+    instance.show();
+  }
 }
