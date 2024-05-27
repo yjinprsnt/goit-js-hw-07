@@ -35,5 +35,13 @@ function onClickgallery(evt) {
       `<img src="${originalSrc}" alt="${altText}">`
     );
     instance.show();
+
+    document.addEventListener('keydown', closeModalWindow);
+
+    function closeModalWindow(evt) {
+      if (evt.key === 'Escape') {
+        instance.close();
+      }
+    }
   }
 }
